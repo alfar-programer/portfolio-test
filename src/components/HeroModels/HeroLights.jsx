@@ -38,6 +38,20 @@ const HeroLights = () => {
         color='7209b7'
       />
       
+
+      <pointLight 
+        position={[1,1,-2]}
+        intensity={10}
+        color='0d00a4'
+      />
+      
+      <pointLight 
+        position={[1,-1,-4]}
+        intensity={10}
+        penumbra={1}
+        color='#9D4EDD'
+      />
+      
  
 
     </>
