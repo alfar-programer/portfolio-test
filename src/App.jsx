@@ -1,14 +1,16 @@
+import Hero from "./sections/Hero";
+import AnimatedCanvas from "./components/AnimationCanvas";
+import ParticleBackground from "./components/ParticleBackground";
 
-
-import Hero from "./sections/Hero"
 
 function App() {
-
   return (
     <>
-     <Hero />
+      <ParticleBackground />
+      <AnimatedCanvas />
+      <Hero />
     </>
-  )
+  );
 }
 
-export default App
+export default App;
