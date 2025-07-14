@@ -22,6 +22,45 @@ const navLinks = [
     link: "#Aboutme"
   },
 ];
+export const perks = [
+    {
+      title: "Client-First System",
+      img: "media/64558cfd1b66b2ab60e6cfc3_Muscle (1).svg",
+      desc: "All our websites follow industry-leading Client-first system by Finsweet."
+    },
+    {
+      title: "Fully Responsive",
+      img: "media/63ee78a84384ec4ca43b2634_Responsive (6).svg",
+      desc: "All our websites are made fully responsive for different devices and screens."
+    },
+    {
+      title: "Flexible and Scalable",
+      img: "media/63ee51cdfcb0c0ff2e953331_Scalable.svg",
+      desc: "We follow organised HTML structure inside the Code to make website scalable."
+    },
+    {
+      title: "Faster Turnarounds",
+      img: "media/63ee51cde240699daca34c02_Interactions.svg",
+      desc: "We follow efficient development techniques to ensure faster turnarounds, without sacrificing the quality."
+    },
+    {
+      title: "Advance Interactions",
+      img: "media/645542aef64eda193320b9fe_Interactions (2).svg",
+      desc: "Our team can create simplest to complex interactions using both native and custom JS libraries."
+    },
+    {
+      title: "High Performance",
+      img: "media/6455438dcd6e382e76049b14_Perfomance.svg",
+      desc: "We optimize all our websites for maximum performance and faster loading times."
+    }
+  ];
+
+  export const skillsImages = [
+    "css-3.png", "esc.png", "ai.png", "js.png", "bootstrap.png",
+    "github-sign.png", "HTML.png", "pay.png", "shopify.png",
+    "react.png", "figma.png", "vsc.jpg", "tailpng.png", "npm.png",
+    "chat.jpg", "illustrator.png"
+  ];
 
 const words = [
   { text: "Ideas", imgPath: "/images/ideas.svg" },

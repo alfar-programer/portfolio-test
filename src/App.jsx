@@ -3,6 +3,8 @@ import AnimatedCanvas from "./components/AnimationCanvas";
 import ParticleBackground from "./components/ParticleBackground";
 import Projects from "./sections/Projects";
 import Navbar from "./sections/Navbar";
+import About from "./sections/About";
+
 function App() {
   return (
     <>
@@ -10,6 +12,7 @@ function App() {
       <AnimatedCanvas />
       <Navbar />
       <Hero />
+      <About />
       <Projects />
     </>
   );
