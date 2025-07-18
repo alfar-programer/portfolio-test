@@ -1,0 +1,9 @@
+E:\Work\projects-react\portpholio-3D\PortfolioReviewsApi\obj\Debug\net9.0\PortfolioReviewsApi.csproj.AssemblyReference.cache
+E:\Work\projects-react\portpholio-3D\PortfolioReviewsApi\obj\Debug\net9.0\rpswa.dswa.cache.json
+E:\Work\projects-react\portpholio-3D\PortfolioReviewsApi\obj\Debug\net9.0\PortfolioReviewsApi.GeneratedMSBuildEditorConfig.editorconfig
+E:\Work\projects-react\portpholio-3D\PortfolioReviewsApi\obj\Debug\net9.0\PortfolioReviewsApi.AssemblyInfoInputs.cache
+E:\Work\projects-react\portpholio-3D\PortfolioReviewsApi\obj\Debug\net9.0\PortfolioReviewsApi.AssemblyInfo.cs
+E:\Work\projects-react\portpholio-3D\PortfolioReviewsApi\obj\Debug\net9.0\PortfolioReviewsApi.csproj.CoreCompileInputs.cache
+E:\Work\projects-react\portpholio-3D\PortfolioReviewsApi\obj\Debug\net9.0\PortfolioReviewsApi.MvcApplicationPartsAssemblyInfo.cs
+E:\Work\projects-react\portpholio-3D\PortfolioReviewsApi\obj\Debug\net9.0\PortfolioReviewsApi.MvcApplicationPartsAssemblyInfo.cache
+E:\Work\projects-react\portpholio-3D\PortfolioReviewsApi\obj\Debug\net9.0\PortfolioReviewsApi.sourcelink.json

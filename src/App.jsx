@@ -5,7 +5,7 @@ import Projects from "./sections/Projects";
 import Navbar from "./sections/Navbar";
 import About from "./sections/About";
 import ExperienceSection from "./sections/ExperienceSection";
-
+import Reviews from "./sections/Reviews";
 
 function App() {
   return (
@@ -17,6 +17,7 @@ function App() {
       <About />
       <ExperienceSection />
       <Projects />
+      <Reviews />
     </>
   );
 }

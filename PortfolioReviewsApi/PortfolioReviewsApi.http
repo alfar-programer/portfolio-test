@@ -1,0 +1,6 @@
+@PortfolioReviewsApi_HostAddress = http://localhost:5151
+
+GET {{PortfolioReviewsApi_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
