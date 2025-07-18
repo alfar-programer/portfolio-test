@@ -65,7 +65,7 @@ function About() {
         y: 0,
         opacity: 1,
         stagger: 0.1,
-        duration: 2,
+        duration: .5,
         ease: "power3.out",
         scrollTrigger: {
           trigger: perksListRef.current,
@@ -79,7 +79,7 @@ function About() {
 
  
   return (
-    <div className="w-full" id="aboutme">
+    <section  className="section-padding w-full" id="aboutme">
       <div className="text-center my-40">
         <h1 className="text-5xl sm:text-6xl font-bold uppercase tracking-tight text-[var(--main-color)] font-[Space Grotesk]">
           About me
@@ -121,12 +121,12 @@ function About() {
       </div>
 
       <div className="text-center mt-32">
-        <h1 className="text-5xl sm:text-6xl font-bold uppercase tracking-tight text-[var(--main-color)] font-[Space Grotesk]">
+        <h1 className="title-services text-5xl sm:text-6xl font-bold uppercase tracking-tight text-[var(--main-color)] font-[Space Grotesk]">
           Services
         </h1>
       </div>
 
-      <div className="relative w-[80%] mx-auto mt-12">
+      <div className="card card-bordr timeLine-card rounded-xl p-5 relative w-[80%] mx-auto mt-12">
         <div
           ref={perksListRef}
           className="grid grid-cols-1 sm:grid-cols-2 border-2 border-white/20 rounded-lg overflow-hidden"
@@ -153,7 +153,7 @@ function About() {
           ))}
         </div>
       </div>
-    </div>
+    </section>
   );
 }
 
