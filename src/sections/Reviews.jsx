@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import emailjs from "@emailjs/browser";
 
 const API_URL = 'http://localhost:8000/api/reviews';
 
