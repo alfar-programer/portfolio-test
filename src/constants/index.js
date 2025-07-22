@@ -23,32 +23,38 @@ const navLinks = [
 ];
 export const perks = [
     {
-      title: "Client-First System",
+      num: "(01)",
+      title: "Client-First \n System",
       img: "media/64558cfd1b66b2ab60e6cfc3_Muscle (1).svg",
       desc: "All our websites follow industry-leading Client-first system by Finsweet."
     },
     {
-      title: "Fully Responsive",
+      num: "(02)",
+      title: "Fully \n Responsive",
       img: "media/63ee78a84384ec4ca43b2634_Responsive (6).svg",
       desc: "All our websites are made fully responsive for different devices and screens."
     },
     {
-      title: "Flexible and Scalable",
+      num: "(03)",
+      title: "Flexible \n and Scalable",
       img: "media/63ee51cdfcb0c0ff2e953331_Scalable.svg",
       desc: "We follow organised HTML structure inside the Code to make website scalable."
     },
     {
-      title: "Faster Turnarounds",
+      num: "(04)",
+      title: "Faster \n Turnarounds",
       img: "media/63ee51cde240699daca34c02_Interactions.svg",
       desc: "We follow efficient development techniques to ensure faster turnarounds, without sacrificing the quality."
     },
     {
-      title: "Advance Interactions",
+      num: "(05)",
+      title: "Advance \n Interactions",
       img: "media/645542aef64eda193320b9fe_Interactions (2).svg",
       desc: "Our team can create simplest to complex interactions using both native and custom JS libraries."
     },
     {
-      title: "High Performance",
+      num: "(06)",
+      title: "High \n Performance",
       img: "media/6455438dcd6e382e76049b14_Perfomance.svg",
       desc: "We optimize all our websites for maximum performance and faster loading times."
     }
@@ -320,3 +326,30 @@ export {
   techStackImgs,
   navLinks,
 };
+
+const projectsData = [
+  {
+    title: "Al-Hurriya",
+    image: "media/Al-Hurriya.png",
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem laudantium cumque voluptas maiores ex amet inventore quas accusamus iusto fuga odio velit error natus, aliquam, pariatur cum, est officiis et.",
+    link: "https://al-horria.com/home",
+    reverse: false,
+  },
+  {
+    title: "Store",
+    image: "media/Coza-Store-Free-HTML5-eCommerce-Website-Template-1.jpg",
+    description:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint, quibusdam voluptatem aspernatur hic ab numquam fuga voluptatum illo repellendus ratione iste reiciendis provident accusantium ut impedit possimus necessitatibus voluptas quas?",
+    link: "https://abdelrahmankhattab.github.io/store/",
+    reverse: true,
+  },
+  {
+    title: "App Web",
+    image: "media/app.png",
+    description:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit aliquam ea nesciunt. Illum quae debitis consequuntur dicta perferendis, non, aliquid est nemo assumenda nobis expedita, molestiae similique. Maxime, modi quibusdam!",
+    link: "https://abdelrahmankhattab.github.io/app/",
+    reverse: false,
+  },
+];

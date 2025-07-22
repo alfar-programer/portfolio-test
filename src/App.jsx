@@ -7,6 +7,7 @@ import About from "./sections/About";
 import ExperienceSection from "./sections/ExperienceSection";
 import Reviews from "./sections/Reviews";
 import Contact from "./sections/Contact";
+import Serveces from "./sections/Serveces";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
       <Navbar />
       <Hero />
       <About />
+      <Serveces />
       <ExperienceSection />
       <Projects />
       <Reviews />

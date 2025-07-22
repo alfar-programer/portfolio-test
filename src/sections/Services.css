@@ -1,0 +1,97 @@
+.neon-text {
+  color: #e2eae0;
+  text-shadow:
+    0 0 5px #bac2b9,
+    0 0 10px #fdfdfd,
+    0 0 20px #e8eee7,
+    0 0 40px rgb(196, 207, 204),
+    0 0 80px #0fa;
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: clamp(2rem, 8vw, 4rem);
+  letter-spacing: 0.05em;
+}
+
+@media (max-width: 600px) {
+  .neon-text {
+    font-size: clamp(1.5rem, 10vw, 2.5rem);
+  }
+}
+
+.card-serveces-desc {
+  font-size: 0.95rem;
+  color: rgba(180, 190, 200, 0.7); /* soft gray with opacity */
+  text-shadow: 0 1px 4px rgba(60, 60, 60, 0.25);
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 400;
+  letter-spacing: 0.03em;
+} 
+
+
+
+.card-serveces-all{
+    background-color: #000000;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s cubic-bezier(.25,.8,.25,1), box-shadow 0.3s;
+    will-change: transform;
+  
+    border: 1px solid #333;
+   
+    position: relative;
+    overflow: hidden;
+   
+    max-width: 400px;
+    animation: ghost-smoke 3.5s ease-in-out infinite;
+
+    
+}
+
+.card-serveces-all::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.3s;
+  background: radial-gradient(
+    circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
+    rgba(255,255,255,0.18) 0%,
+    rgba(255,255,255,0.10) 40%,
+    rgba(255,255,255,0.00) 80%
+  );
+  z-index: 1;
+}
+
+.card-serveces-all:hover::before {
+  opacity: 1;
+}
+
+@keyframes ghost-smoke {
+  0% {
+    box-shadow:
+      0 0 20px 8px rgba(180, 190, 200, 0.18),
+      0 0 60px 24px rgba(180, 190, 200, 0.10),
+      0 0 120px 48px rgba(180, 190, 200, 0.06);
+  }
+  30% {
+    box-shadow:
+      0 0 40px 16px rgba(180, 190, 200, 0.22),
+      0 0 80px 32px rgba(180, 190, 200, 0.13),
+      0 0 160px 64px rgba(180, 190, 200, 0.08);
+  }
+  60% {
+    box-shadow:
+      0 0 60px 24px rgba(180, 190, 200, 0.16),
+      0 0 100px 40px rgba(180, 190, 200, 0.09),
+      0 0 200px 80px rgba(180, 190, 200, 0.05);
+  }
+  100% {
+    box-shadow:
+      0 0 20px 8px rgba(180, 190, 200, 0.18),
+      0 0 60px 24px rgba(180, 190, 200, 0.10),
+      0 0 120px 48px rgba(180, 190, 200, 0.06);
+  }
+}

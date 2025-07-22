@@ -118,41 +118,7 @@ function About() {
             </div>
           ))}
         </div>
-      </div>
-
-      <div className="text-center mt-32">
-        <h1 className="title-services text-5xl sm:text-6xl font-bold uppercase tracking-tight text-[var(--main-color)] font-[Space Grotesk]">
-          Services
-        </h1>
-      </div>
-
-      <div className="card card-bordr timeLine-card rounded-xl p-5 relative w-[80%] mx-auto mt-12">
-        <div
-          ref={perksListRef}
-          className="grid grid-cols-1 sm:grid-cols-2 border-2 border-white/20 rounded-lg overflow-hidden"
-        >
-          {perks.map((perk, index) => (
-            <div
-              key={index}
-              className="perks_item relative flex flex-col items-center text-center bg-white/10 p-24 transition duration-1000 ease-in-out opacity-0 translate-y-[261px] outline outline-1 outline-white/20 "
-            >
-              <div className="w-28 h-28 mb-6 rounded-full bg-white/10 border-t border-l border-white/50 flex justify-center items-center">
-                <img
-                  src={perk.img}
-                  alt={perk.title}
-                  className="w-20 h-20 object-contain"
-                />
-              </div>
-              <h3 className="text-2xl font-medium text-[var(--main-color)] font-[Space Grotesk]">
-                {perk.title}
-              </h3>
-              <p className="mt-2 text-[var(--main-color)] max-w-md">
-                {perk.desc}
-              </p>
-            </div>
-          ))}
-        </div>
-      </div>
+      </div>          
     </section>
   );
 }
