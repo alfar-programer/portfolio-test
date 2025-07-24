@@ -80,7 +80,7 @@ function About() {
  
   return (
     <section  className="section-padding w-full" id="aboutme">
-      <div className="text-center my-40">
+      <div className="text-center my-5">
         <h1 className="text-5xl sm:text-6xl font-bold uppercase tracking-tight text-[var(--main-color)] font-[Space Grotesk]">
           About me
         </h1>
@@ -103,7 +103,7 @@ function About() {
 
         <div
           ref={skillRef}
-          className="absolute flex flex-wrap justify-center items-center gap-16 will-change-transform"
+          className="absolute flex flex-wrap justify-center items-center gap-20 will-change-transform"
         >
           {skillsImages.map((src, index) => (
             <div
