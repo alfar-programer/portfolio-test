@@ -37,10 +37,8 @@
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s cubic-bezier(.25,.8,.25,1), box-shadow 0.3s;
     will-change: transform;
-  
+    position: sticky;
     border: 1px solid #333;
-   
-    position: relative;
     overflow: hidden;
    
     max-width: 400px;

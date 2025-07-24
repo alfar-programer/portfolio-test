@@ -1,11 +1,50 @@
-import React, { useState } from 'react'
+import React, { useState, useRef, useEffect } from 'react'
 import './Services.css'
 import { perks } from '../constants'
+import gsap from 'gsap'
+import ScrollTrigger from 'gsap/ScrollTrigger'
+
+gsap.registerPlugin(ScrollTrigger)
 
 const Serveces = () => {
-  // State to track mouse position for each card
+  // For the light effect
   const [mousePos, setMousePos] = useState({});
+  // For GSAP animation
+  const cardsRef = useRef([]);
 
+  // GSAP reveal animation
+  useEffect(() => {
+    cardsRef.current.forEach((card, idx) => {
+      gsap.fromTo(
+        card,
+        { 
+            opacity: 0,
+             y: 100,
+             x:200,
+             zIndex:10,
+             duration:1,
+             ease:'power2.out',
+            
+        },
+
+        {
+          opacity: 1,
+          y: 0,
+          x: 0,
+          duration: 3,
+          ease: 'power2.out',
+          scrollTrigger: {
+            trigger: card,
+            start: 'top 60%',
+            end: 'top 50%',
+            scrub: true,
+          },
+        }
+      );
+    });
+  }, []);
+
+  // Light effect handlers
   const handleMouseMove = (e, idx) => {
     const rect = e.currentTarget.getBoundingClientRect();
     const x = ((e.clientX - rect.left) / rect.width) * 100;
@@ -35,11 +74,12 @@ const Serveces = () => {
             <h1 className="text-center text-6xl font-bold uppercase tracking-tight text-[var(--main-color)] font-[Space Grotesk]">Services</h1>
           </div>
           <div className="relative z-10 mt-10 align-middle justify-center flex flex-col gap-4">
-            <div className="cards-serveces align-middle justify-center flex flex-col gap-4 xl:space-y-32 space-y-10">
+            <div className="cards-serveces relative align-middle justify-center flex flex-col gap-4 xl:space-y-32 space-y-10">
               {perks.map((perk, idx) => (
                 <div
-                  className="card-serveces-all xl:space-y-7 space-y-4 align-middle justify-center flex flex-col gap-4"
+                  className="card-serveces-all sticky top-40px xl:space-y-7 space-y-4 align-middle justify-center flex flex-col gap-4"
                   key={perk.num}
+                  ref={el => (cardsRef.current[idx] = el)}
                   onMouseMove={e => handleMouseMove(e, idx)}
                   onMouseLeave={e => handleMouseLeave(e, idx)}
                   style={{

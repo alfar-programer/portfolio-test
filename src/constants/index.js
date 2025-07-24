@@ -198,6 +198,18 @@ const techStackIcons = [
 const expCards = [
   {
     review: "Mazen has done great work on the front-end projects. He always faces challenges with a positive and problem-solving attitude.",
+    imgPath: "/images/Udacity.png",
+    logoPath: "/images/title-udacity.png",
+    title: "Team Leader (Programming competition)",
+    date: "Nov  2023 - Nov 2023",
+    responsibilities: [
+      "Built cross-platform mobile apps using React Native, integrating with Appwrite's backend services.",
+      "Improved app performance and user experience through code optimization and testing.",
+      "Coordinated with the product team to implement features based on feedback.",
+    ],
+  },
+  {
+    review: "Mazen has done great work on the front-end projects. He always faces challenges with a positive and problem-solving attitude.",
     imgPath: "/images/octavey.png",
     logoPath: "/images/title-octavey.png",
     title: "Frontend Developer",
@@ -220,18 +232,7 @@ const expCards = [
       "Contributed to open-source projects that were used with the Docker ecosystem.",
     ],
   },
-  {
-    review: "Mazen has done great work on the front-end projects. He always faces challenges with a positive and problem-solving attitude.",
-    imgPath: "/images/Udacity.png",
-    logoPath: "/images/title-udacity.png",
-    title: "Team Leader (Programming competition)",
-    date: "Nov  2023 - Nov 2023",
-    responsibilities: [
-      "Built cross-platform mobile apps using React Native, integrating with Appwrite's backend services.",
-      "Improved app performance and user experience through code optimization and testing.",
-      "Coordinated with the product team to implement features based on feedback.",
-    ],
-  },
+  
 ];
 
 const expLogos = [

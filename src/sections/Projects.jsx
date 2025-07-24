@@ -1,6 +1,6 @@
-import React from "react";
-import { motion } from "framer-motion";
+import React, { useState, useEffect, useRef } from "react";
 import "../components/Projects.css";
+import gsap from "gsap";
 
 const projectsData = [
   {
@@ -27,36 +27,145 @@ const projectsData = [
 ];
 
 function Projects() {
+  const [current, setCurrent] = useState(0);
+  const [showModal, setShowModal] = useState(false);
+  const timeoutRef = useRef(null);
+  const slideRefs = useRef([]);
+  const prevIdx = useRef(0);
+  const modalRef = useRef(null);
+
+  // Auto-advance every 5 seconds
+  useEffect(() => {
+    const next = () => setCurrent((prev) => (prev + 1) % projectsData.length);
+    timeoutRef.current = setInterval(next, 5000);
+    return () => clearInterval(timeoutRef.current);
+  }, []);
+
+  // GSAP animation for all slides
+  useEffect(() => {
+    projectsData.forEach((_, idx) => {
+      if (idx === current) {
+        gsap.fromTo(
+          slideRefs.current[idx],
+          { opacity: 0, x: 100 },
+          { opacity: 1, x: 0, duration: 1, ease: "power2.out", pointerEvents: 'auto' }
+        );
+      } else if (idx === prevIdx.current) {
+        gsap.to(slideRefs.current[idx], { opacity: 0, x: -100, duration: 1, ease: "power2.in", pointerEvents: 'none' });
+      } else {
+        gsap.set(slideRefs.current[idx], { opacity: 0, x: 100, pointerEvents: 'none' });
+      }
+    });
+    prevIdx.current = current;
+  }, [current]);
+
+  // GSAP animation for modal
+  useEffect(() => {
+    if (showModal && modalRef.current) {
+      gsap.fromTo(
+        modalRef.current,
+        { opacity: 0, scale: 0.95 },
+        { opacity: 1, scale: 1, duration: 0.4, ease: "power2.out" }
+      );
+    }
+  }, [showModal]);
+
+  const prevProject = () => setCurrent((prev) => (prev - 1 + projectsData.length) % projectsData.length);
+  const nextProject = () => setCurrent((prev) => (prev + 1) % projectsData.length);
+
   return (
-    <section className="work projects-scroll-section" id="work">
-      <div className="work-header-text">
-        <h1>projects</h1>
+    <section className="w-full flex flex-col items-center py-12 pt-20 bg-black min-h-[60vh]" id="work">
+      <div className="mb-8 text-center">
+        <h1 className="text-6xl font-bold text-white mb-2">Interactive Projects</h1>
+        <p className="text-lg text-gray-300">
+          <span className="font-semibold text-white">Explore real results</span> from our recent projects. Each solution delivered <span className="font-semibold text-white">measurable business impact</span> for our clients.
+        </p>
       </div>
-      <div className="projects-scroll-container">
-        {projectsData.map((project) => (
-          <motion.section
-            className="project-slide"
+      <div className="relative w-full max-w-7xl h-[600px] flex items-center justify-center bg-neutral-900 rounded-xl shadow-lg overflow-hidden transition-transform duration-500">
+        {/* Left Arrow */}
+        <button
+          className="absolute left-4 z-20 bg-neutral-800 hover:bg-neutral-700 text-white rounded-full p-2 transition"
+          onClick={prevProject}
+          aria-label="Previous Project"
+        >
+          &#8592;
+        </button>
+        {/* Slides */}
+        {projectsData.map((project, idx) => (
+          <div
             key={project.title}
-            initial={{ opacity: 0, y: 100 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, ease: "easeOut" }}
-            viewport={{ once: true, amount: 0.6 }}
+            ref={el => (slideRefs.current[idx] = el)}
+            className={`absolute top-0 left-0 w-full h-full flex flex-col md:flex-row items-center justify-center px-8 transition-all duration-500 ${idx === current ? 'z-10' : 'z-0 pointer-events-none'}`}
+            style={{ opacity: idx === current ? 1 : 0 }}
           >
-            <div className="project-slide-content">
-              <div className="project-slide-img-wrap">
-                <img src={project.image} alt={project.title} className="project-slide-img" />
-              </div>
-              <div className="project-slide-details">
-                <h2>{project.title}</h2>
-                <p>{project.description}</p>
-                <a href={project.link} target="_blank" rel="noopener noreferrer">
-                  <button>visit →</button>
-                </a>
-              </div>
+            <div className="flex-shrink-0 w-150 h-100 flex items-center justify-center">
+              <img
+                src={project.image}
+                alt={project.title}
+                className="object-cover rounded-lg w-full h-full shadow-md border-2 border-neutral-700"
+              />
             </div>
-          </motion.section>
+            <div className="ml-0 md:ml-8 mt-6 md:mt-0 text-center md:text-left">
+              <h2 className="text-6xl font-bold text-white mb-12">{project.title}</h2>
+              <p className="text-gray-300 mb-12 max-w-md">{project.description}</p>
+              <a href={project.link} target="_blank" rel="noopener noreferrer">
+                <button className="bg-blue-400 hover:bg-blue-500 text-white px-12 py-5 rounded transition font-semibold">Visit →</button>
+              </a>
+            </div>
+          </div>
         ))}
+        {/* Right Arrow */}
+        <button
+          className="absolute right-4 z-20 bg-neutral-800 hover:bg-neutral-700 text-white rounded-full p-2 transition"
+          onClick={nextProject}
+          aria-label="Next Project"
+        >
+          &#8594;
+        </button>
       </div>
+      {/* View All Projects Button (modal to be added) */}
+      <div className="mt-8">
+        <button
+          className="bg-blue-300 hover:bg-blue-400 text-black font-semibold px-12 py-5 rounded shadow transition"
+          onClick={() => setShowModal(true)}
+        >
+          View All Projects →
+        </button>
+      </div>
+      {/* Modal Overlay */}
+      {showModal && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-70">
+          <div
+            ref={modalRef}
+            className="relative bg-white rounded-xl shadow-2xl p-8 max-w-4xl w-full mx-4"
+          >
+            <button
+              className="absolute top-4 right-4 text-2xl text-gray-500 hover:text-gray-800 font-bold"
+              onClick={() => setShowModal(false)}
+              aria-label="Close Modal"
+            >
+              &times;
+            </button>
+            <h2 className="text-3xl font-bold text-center mb-8 text-black">All Projects</h2>
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+              {projectsData.map((project) => (
+                <div key={project.title} className="bg-gray-100 rounded-lg p-4 flex flex-col items-center shadow">
+                  <img
+                    src={project.image}
+                    alt={project.title}
+                    className="w-32 h-32 object-cover rounded mb-4 border border-gray-300"
+                  />
+                  <h3 className="text-xl font-semibold mb-2 text-black">{project.title}</h3>
+                  <p className="text-gray-700 text-sm mb-4 text-center">{project.description}</p>
+                  <a href={project.link} target="_blank" rel="noopener noreferrer">
+                    <button className="bg-blue-400 hover:bg-blue-500 text-white px-4 py-2 rounded transition font-semibold">Visit →</button>
+                  </a>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      )}
     </section>
   );
 }
