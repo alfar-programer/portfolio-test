@@ -2,7 +2,7 @@
 import React, { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { perks, skillsImages } from "../constants";
+import { skillsImages } from "../constants";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -86,7 +86,7 @@ function About() {
         </h1>
       </div>
 
-      <div
+      <div id="about"
         className="relative flex items-center justify-center min-h-screen overflow-hidden bg-[radial-gradient(circle,rgba(255,255,255,0.15),transparent_69%)]"
         ref={sectionRef}
       >

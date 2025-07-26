@@ -24,11 +24,12 @@ const Navbar = () => {
       <nav className='desktop'>
         <ul>
           {navLinks.map(({ link , name})=>(
+             <a href={link}>
             <li key={name} className='group cursor-pointer'>
-              <a href={link}></a>
               <span>{name}</span>
               <span className='underline'/>
             </li>
+            </a>
           ))}
         </ul>
       </nav>

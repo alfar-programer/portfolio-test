@@ -1,25 +1,26 @@
 
 const navLinks = [
   {
-    name: "Work",
-    link: "#work",
+    name: "Home",
+    link: "#hero",
   },
   {
-    name: "Experience",
+    name: "About",
+    link: "#about",
+  },
+  {
+    name: "Services",
+    link: "#Services",
+  },
+  {
+    name: "Work-EX",
     link: "#experience",
   },
   {
-    name: "Skills",
-    link: "#skills",
+    name: "Projects",
+    link: "#project"
   },
-  {
-    name: "Testimonials",
-    link: "#testimonials",
-  },
-  {
-    name: "About me",
-    link: "#Aboutme"
-  },
+
 ];
 export const perks = [
     {
@@ -64,7 +65,7 @@ export const perks = [
     "css-3.png", "esc.png", "ai.png", "js.png", "bootstrap.png",
     "github-sign.png", "HTML.png", "pay.png", "shopify.png",
     "react.png", "figma.png", "vsc.jpg", "tailpng.png", "npm.png",
-    "chat.jpg", "illustrator.png"
+    "chat.jpg", "illustrator.png","py.jpg","Vite.jpg"
   ];
 
 const words = [
@@ -327,30 +328,3 @@ export {
   techStackImgs,
   navLinks,
 };
-
-const projectsData = [
-  {
-    title: "Al-Hurriya",
-    image: "media/Al-Hurriya.png",
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem laudantium cumque voluptas maiores ex amet inventore quas accusamus iusto fuga odio velit error natus, aliquam, pariatur cum, est officiis et.",
-    link: "https://al-horria.com/home",
-    reverse: false,
-  },
-  {
-    title: "Store",
-    image: "media/Coza-Store-Free-HTML5-eCommerce-Website-Template-1.jpg",
-    description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint, quibusdam voluptatem aspernatur hic ab numquam fuga voluptatum illo repellendus ratione iste reiciendis provident accusantium ut impedit possimus necessitatibus voluptas quas?",
-    link: "https://abdelrahmankhattab.github.io/store/",
-    reverse: true,
-  },
-  {
-    title: "App Web",
-    image: "media/app.png",
-    description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit aliquam ea nesciunt. Illum quae debitis consequuntur dicta perferendis, non, aliquid est nemo assumenda nobis expedita, molestiae similique. Maxime, modi quibusdam!",
-    link: "https://abdelrahmankhattab.github.io/app/",
-    reverse: false,
-  },
-];

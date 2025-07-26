@@ -24,6 +24,41 @@ const projectsData = [
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit aliquam ea nesciunt. Illum quae debitis consequuntur dicta perferendis, non, aliquid est nemo assumenda nobis expedita, molestiae similique. Maxime, modi quibusdam!",
     link: "https://abdelrahmankhattab.github.io/app/",
   },
+  {
+    title: "Coffee Shop",
+    image: "/public/images/project3.png",
+    description:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit aliquam ea nesciunt. Illum quae debitis consequuntur dicta perferendis, non, aliquid est nemo assumenda nobis expedita, molestiae similique. Maxime, modi quibusdam!",
+    link: "https://alfar-programer.github.io/coffee/",
+  },
+  {
+    title: "Shoes Store",
+    image: "/public/images/project2.png",
+    description:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit aliquam ea nesciunt. Illum quae debitis consequuntur dicta perferendis, non, aliquid est nemo assumenda nobis expedita, molestiae similique. Maxime, modi quibusdam!",
+    link: "https://alfar-programer.github.io/shoes-store/",
+  },
+  {
+    title: "Gym Website",
+    image: "/public/images/project1.png",
+    description:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit aliquam ea nesciunt. Illum quae debitis consequuntur dicta perferendis, non, aliquid est nemo assumenda nobis expedita, molestiae similique. Maxime, modi quibusdam!",
+    link: "https://alfar-programer.github.io/gym2/",
+  },
+  {
+    title: "Restaurant",
+    image: "/public/images/project4.png",
+    description:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit aliquam ea nesciunt. Illum quae debitis consequuntur dicta perferendis, non, aliquid est nemo assumenda nobis expedita, molestiae similique. Maxime, modi quibusdam!",
+    link: "https://alfar-programer.github.io/restaurant/",
+  },
+  {
+    title: "Gym Website",
+    image: "/public/images/project5.png",
+    description:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit aliquam ea nesciunt. Illum quae debitis consequuntur dicta perferendis, non, aliquid est nemo assumenda nobis expedita, molestiae similique. Maxime, modi quibusdam!",
+    link: "https://alfar-programer.github.io/GYM/",
+  },
 ];
 
 function Projects() {
@@ -34,12 +69,21 @@ function Projects() {
   const prevIdx = useRef(0);
   const modalRef = useRef(null);
 
-  // Auto-advance every 5 seconds
+  // Auto-advance every 8 seconds
   useEffect(() => {
     const next = () => setCurrent((prev) => (prev + 1) % projectsData.length);
-    timeoutRef.current = setInterval(next, 5000);
+    timeoutRef.current = setInterval(next, 8000);
     return () => clearInterval(timeoutRef.current);
   }, []);
+
+  // Reset timer function
+  const resetTimer = () => {
+    if (timeoutRef.current) {
+      clearInterval(timeoutRef.current);
+    }
+    const next = () => setCurrent((prev) => (prev + 1) % projectsData.length);
+    timeoutRef.current = setInterval(next, 8000);
+  };
 
   // GSAP animation for all slides
   useEffect(() => {
@@ -70,12 +114,18 @@ function Projects() {
     }
   }, [showModal]);
 
-  const prevProject = () => setCurrent((prev) => (prev - 1 + projectsData.length) % projectsData.length);
-  const nextProject = () => setCurrent((prev) => (prev + 1) % projectsData.length);
+  const prevProject = () => {
+    setCurrent((prev) => (prev - 1 + projectsData.length) % projectsData.length);
+    resetTimer();
+  };
+  const nextProject = () => {
+    setCurrent((prev) => (prev + 1) % projectsData.length);
+    resetTimer();
+  };
 
   return (
-    <section className="w-full flex flex-col items-center py-12 pt-20 bg-black min-h-[60vh]" id="work">
-      <div className="mb-8 text-center">
+    <section  className="w-full flex flex-col items-center py-12 pt-20 bg-black min-h-[60vh]" id="work">
+      <div id="project" className="mb-8 text-center">
         <h1 className="text-6xl font-bold text-white mb-2">Interactive Projects</h1>
         <p className="text-lg text-gray-300">
           <span className="font-semibold text-white">Explore real results</span> from our recent projects. Each solution delivered <span className="font-semibold text-white">measurable business impact</span> for our clients.
@@ -134,10 +184,10 @@ function Projects() {
       </div>
       {/* Modal Overlay */}
       {showModal && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-70">
+        <div  className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-70 p-4">
           <div
             ref={modalRef}
-            className="relative bg-white rounded-xl shadow-2xl p-8 max-w-4xl w-full mx-4"
+            className="relative bg-white rounded-xl shadow-2xl p-8 max-w-6xl w-full max-h-[90vh] overflow-y-auto"
           >
             <button
               className="absolute top-4 right-4 text-2xl text-gray-500 hover:text-gray-800 font-bold"
@@ -147,18 +197,18 @@ function Projects() {
               &times;
             </button>
             <h2 className="text-3xl font-bold text-center mb-8 text-black">All Projects</h2>
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
               {projectsData.map((project) => (
-                <div key={project.title} className="bg-gray-100 rounded-lg p-4 flex flex-col items-center shadow">
+                <div key={project.title} className="bg-gray-100 rounded-lg p-4 flex flex-col items-center shadow hover:shadow-lg transition-shadow">
                   <img
                     src={project.image}
                     alt={project.title}
-                    className="w-52 h-32 object-cover rounded mb-4 border border-gray-300"
+                    className="w-full h-40 object-cover rounded mb-4 border border-gray-300"
                   />
-                  <h3 className="text-xl font-semibold mb-2 text-black">{project.title}</h3>
+                  <h3 className="text-lg font-semibold mb-3 text-black text-center">{project.title}</h3>
                  
-                  <a href={project.link} target="_blank" rel="noopener noreferrer">
-                    <button className="bg-blue-400 hover:bg-blue-500 text-white px-4 py-2 rounded transition font-semibold">Visit →</button>
+                  <a href={project.link} target="_blank" rel="noopener noreferrer" className="w-full">
+                    <button className="w-full bg-blue-400 hover:bg-blue-500 text-white px-4 py-2 rounded transition font-semibold">Visit →</button>
                   </a>
                 </div>
               ))}

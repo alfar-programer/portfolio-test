@@ -39,8 +39,8 @@
     will-change: transform;
     position: sticky;
     border: 1px solid #333;
-    overflow: hidden;
-   
+    top: 50vh;
+   overflow: hidden;
     max-width: 400px;
     animation: ghost-smoke 3.5s ease-in-out infinite;
 
