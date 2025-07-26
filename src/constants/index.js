@@ -225,7 +225,7 @@ const expCards = [
     review: "Mazen has done great work on the front-end projects. He always faces challenges with a positive and problem-solving attitude.",
     imgPath: "/images/elhoria.png",
     logoPath: "/images/title-elhoria.png",
-    title: "Full Stack Developer",
+    title: "Front-end Developer",
     date: "June 2022 ",
     responsibilities: [
       "Led the development of Docker's web applications, focusing on scalability.",
