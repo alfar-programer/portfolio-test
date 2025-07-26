@@ -26,35 +26,35 @@ const projectsData = [
   },
   {
     title: "Coffee Shop",
-    image: "/public/images/project3.png",
+    image: "/images/project3.png",
     description:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit aliquam ea nesciunt. Illum quae debitis consequuntur dicta perferendis, non, aliquid est nemo assumenda nobis expedita, molestiae similique. Maxime, modi quibusdam!",
     link: "https://alfar-programer.github.io/coffee/",
   },
   {
     title: "Shoes Store",
-    image: "/public/images/project2.png",
+    image: "/images/project2.png",
     description:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit aliquam ea nesciunt. Illum quae debitis consequuntur dicta perferendis, non, aliquid est nemo assumenda nobis expedita, molestiae similique. Maxime, modi quibusdam!",
     link: "https://alfar-programer.github.io/shoes-store/",
   },
   {
     title: "Gym Website",
-    image: "/public/images/project1.png",
+    image: "/images/project1.png",
     description:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit aliquam ea nesciunt. Illum quae debitis consequuntur dicta perferendis, non, aliquid est nemo assumenda nobis expedita, molestiae similique. Maxime, modi quibusdam!",
     link: "https://alfar-programer.github.io/gym2/",
   },
   {
     title: "Restaurant",
-    image: "/public/images/project4.png",
+    image: "/images/project4.png",
     description:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit aliquam ea nesciunt. Illum quae debitis consequuntur dicta perferendis, non, aliquid est nemo assumenda nobis expedita, molestiae similique. Maxime, modi quibusdam!",
     link: "https://alfar-programer.github.io/restaurant/",
   },
   {
     title: "Gym Website",
-    image: "/public/images/project5.png",
+    image: "/images/project5.png",
     description:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit aliquam ea nesciunt. Illum quae debitis consequuntur dicta perferendis, non, aliquid est nemo assumenda nobis expedita, molestiae similique. Maxime, modi quibusdam!",
     link: "https://alfar-programer.github.io/GYM/",
